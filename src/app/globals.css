@@ -10,24 +10,77 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
+    /* --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0; */
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  /* color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.btn-white {
+  outline: white;
+  color: white;
+}
+
+.btn-white:hover {
+  background-color: white;
+  color: #7d4998;
+  outline: #7d4998;
+}
+
+.btn-primryM:hover {
+  outline-style: solid;
+  outline-width: thin;
+  outline-color: #7d4998;
+  color: #7d4998;
+  background-color: white;
+}
+
+.btn-primryM {
+  background-color: #7d4998;
+  color: white;
+  outline: white;
+}
+
+.outline-primaryM {
+  border: 1px solid #7d4998;
+  background: white;
+  color: #7d4998;
+  width: fit-content;
+  padding: 4px 20px;
+  border-radius: 6px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.outline-primaryM:hover,
+.outline-primaryM:active,
+.outline-primaryM:focus {
+  background: #7d4998;
+  color: white;
+}
+
+.flowbite-card img{
+  width: 70%;
+  margin: 20px auto;
+  transition: transform 0.8s ease-in-out;
+}
+
+.flowbite-card img:hover{
+  transform: scale(1.2);
 }
