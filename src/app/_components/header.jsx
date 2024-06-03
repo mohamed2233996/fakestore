@@ -31,9 +31,9 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <div className="navbar bg-primary">
+            <div className="navbar bg-primary mb-4">
                 <ul className="menu menu-horizontal px-1 text-white">
-                    <li><a>Home</a></li>
+                    <li><Link href={"/"} >Home</Link></li>
                     <li>
                         <details>
                             <summary>category</summary>
@@ -44,7 +44,7 @@ const Header = () => {
                                     .then(res => {
                                         const categories = res.categories
                                         const categoriesList = categories.map((item) => (
-                                            <li className='text-black hover:text-primary uppercase'><Link href={`/category/${item}`}>{item}</Link></li>
+                                            <li key={item} className='text-black hover:text-primary uppercase'><Link href={`/category/${item}`}>{item}</Link></li>
                                         ))
                                         return categoriesList
                                     })

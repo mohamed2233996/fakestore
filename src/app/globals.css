@@ -75,12 +75,17 @@ body {
   color: white;
 }
 
-.flowbite-card img{
+.flowbite-card img {
   width: 70%;
   margin: 20px auto;
   transition: transform 0.8s ease-in-out;
 }
 
-.flowbite-card img:hover{
+.flowbite-card img:hover {
   transform: scale(1.2);
+}
+
+.flowbite-card>div {
+  justify-content: space-between;
+  height: 500px;
 }
