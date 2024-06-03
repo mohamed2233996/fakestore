@@ -42,7 +42,7 @@ const Intro = () => {
                         </div>
                         <div className="text-black">
                             <h2 className='text-[20px]'>Money Back</h2>
-                            <p className='text-gray-500'>If goods have problem we'll return your good.
+                            <p className='text-gray-500'>If goods have problem we&apos;ll return your good.
                             </p>
                         </div>
                     </div>

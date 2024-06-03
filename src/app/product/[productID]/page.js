@@ -12,7 +12,7 @@ const Page = (props) => {
 
     const productID = props.params.productID
 
-    const getproduct = () => {
+    const Getproduct = () => {
         useEffect(() => {
             fetch(`https://fakestoreapi.in/api/products/${productID}`)
                 .then(res => res.json())
@@ -21,7 +21,7 @@ const Page = (props) => {
         }, [productID])
     }
 
-    getproduct()
+    Getproduct()
 
 
 
