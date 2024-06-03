@@ -89,3 +89,7 @@ body {
   justify-content: space-between;
   height: 500px;
 }
+
+.carouselM img{
+  transform: translate(0);
+}

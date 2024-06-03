@@ -9,18 +9,19 @@ import { IoChatbubblesSharp } from "react-icons/io5";
 
 
 import { Carousel } from "flowbite-react";
+import Image from 'next/image';
 
 const Intro = () => {
     return (
         <>
             <div className="container m-auto">
                 <div className="h-60 sm:h-72 xl:h-96 2xl:h-96">
-                    <Carousel slideInterval={5000}>
-                        <img src="/img/slider1.jpg" alt="..." />
-                        <img src="/img/slider2.jpg" alt="..." />
-                        <img src="/img/slider3.jpg" alt="..." />
-                        <img src="/img/slider4.jpg" alt="..." />
-                        <img src="/img/slider5.jpg" alt="..." />
+                    <Carousel slideInterval={5000} className='carouselM'>
+                        <Image fill={true} src={"/img/slider1.jpg"} alt={"..."} />
+                        <Image fill={true} src={"/img/slider2.jpg"} alt={"..."} />
+                        <Image fill={true} src={"/img/slider3.jpg"} alt={"..."} />
+                        <Image fill={true} src={"/img/slider4.jpg"} alt={"..."} />
+                        <Image fill={true} src={"/img/slider5.jpg"} alt={"..."} />
                     </Carousel>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-start py-5">
