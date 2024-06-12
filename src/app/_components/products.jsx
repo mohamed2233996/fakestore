@@ -1,9 +1,10 @@
 'use client'
 
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Card } from "flowbite-react";
 import Link from 'next/link';
 import ProductsLoading from '../product/_pComponents/productsLoading';
+import { CartContext } from "../_components/cartContext"
 
 
 const Products = () => {
@@ -49,8 +50,6 @@ const Products = () => {
 
     }
 
-
-
     //////////
     useEffect(() => {
         async function onstart() {
@@ -78,6 +77,10 @@ const Products = () => {
         }
     }
 
+    /////////////
+
+    const { addToCart} = useContext(CartContext)
+
 
 
     return (
@@ -97,7 +100,7 @@ const Products = () => {
                     <div className='products-div'>
                         <div className='transition ease-in-out delay-150 productFilter-div grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-items-center mt-16'>
                             {fileredProductList?.map((item) => (
-                                <Link href={`/product/${item.id}`}
+                                <div
                                     key={item.id}
                                     className='flowbite-card'>
                                     <Card
@@ -160,12 +163,12 @@ const Products = () => {
                                         </div>
                                         <div className="flex items-center justify-between">
                                             <span className="text-3xl font-bold text-gray-900 dark:text-white">${item.price}</span>
-                                            <a
-                                                href="#"
+                                            <button
+                                                onClick={() => addToCart({ item })} 
                                                 className="rounded-lg bg-primary px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-[#72229c] focus:outline-none"
                                             >
                                                 Add to cart
-                                            </a>
+                                            </button>
                                         </div>
                                         {item.popular ?
                                             <div className='absolute bg-primary text-white top-0 right-0 py-2 px-3'>
@@ -173,12 +176,12 @@ const Products = () => {
                                             </div>
                                             : null}
                                     </Card>
-                                </Link>
+                                </div>
                             ))}
                         </div>
                         <div className='startItem-div grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-items-center mt-16'>
                             {data.products?.map((item) => (
-                                <Link href={`/product/${item.id}`}
+                                <div
                                     key={item.id}
                                     className='flowbite-card'>
                                     <Card
@@ -241,12 +244,12 @@ const Products = () => {
                                         </div>
                                         <div className="flex items-center justify-between">
                                             <span className="text-3xl font-bold text-gray-900 dark:text-white">${item.price}</span>
-                                            <a
-                                                href="#"
+                                            <button
+                                                onClick={() => addToCart({ item })} 
                                                 className="rounded-lg bg-primary px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-[#72229c] focus:outline-none"
                                             >
                                                 Add to cart
-                                            </a>
+                                            </button>
                                         </div>
                                         {item.popular ?
                                             <div className='absolute bg-primary text-white top-0 right-0 py-2 px-3'>
@@ -254,7 +257,7 @@ const Products = () => {
                                             </div>
                                             : null}
                                     </Card>
-                                </Link>
+                                </div>
                             ))}
                         </div>
                         <div className='hidden noProduct text-center font-bold text-2xl mt-10'>More products will be added soon</div>

@@ -17,7 +17,7 @@ const Intro = () => {
             <div className="container m-auto">
                 <div className="h-60 sm:h-72 xl:h-96 2xl:h-96">
                     <Carousel slideInterval={5000} className='carouselM'>
-                        <Image fill={true} src={"/img/slider1.jpg"} alt={"..."} />
+                        <Image fill={true} src={"/img/slider1.jpg"} priority  alt={"..."} />
                         <Image fill={true} src={"/img/slider2.jpg"} alt={"..."} />
                         <Image fill={true} src={"/img/slider3.jpg"} alt={"..."} />
                         <Image fill={true} src={"/img/slider4.jpg"} alt={"..."} />

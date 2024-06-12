@@ -138,18 +138,18 @@ const Page = (props) => {
                                         >
                                             (5.0)
                                         </p>
-                                        <a
+                                        <Link
                                             href="#"
                                             className="text-sm font-medium leading-none text-gray-900 underline hover:no-underline dark:text-white"
                                         >
                                             345 Reviews
-                                        </a>
+                                        </Link>
                                         <p className='text-primary font-bold ml-4 uppercase'>{product.category}</p>
                                     </div>
                                 </div>
 
                                 <div className="mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8">
-                                    <a
+                                    <Link
                                         href="#"
                                         title=""
                                         className="flex items-center justify-center py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
@@ -173,9 +173,9 @@ const Page = (props) => {
                                             />
                                         </svg>
                                         Add to favorites
-                                    </a>
+                                    </Link>
 
-                                    <a
+                                    <Link
                                         href="#"
                                         title=""
                                         className="btn-primryM mt-4 sm:mt-0 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800 flex items-center justify-center"
@@ -200,7 +200,7 @@ const Page = (props) => {
                                         </svg>
 
                                         Add to cart
-                                    </a>
+                                    </Link>
                                 </div>
 
                                 <hr className="my-6 md:my-8 border-gray-200 dark:border-gray-800" />
@@ -219,7 +219,7 @@ const Page = (props) => {
                         {category ?
                             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-items-center mt-16'>
                                 {category?.map((item) => (
-                                    <Link href={`/product/${item.id}`}
+                                    <div
                                         key={item.id}
                                         className='flowbite-card'>
                                         <Card
@@ -282,12 +282,12 @@ const Page = (props) => {
                                             </div>
                                             <div className="flex items-center justify-between">
                                                 <span className="text-3xl font-bold text-gray-900 dark:text-white">${item.price}</span>
-                                                <a
+                                                <Link
                                                     href="#"
                                                     className="rounded-lg bg-primary px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-[#72229c] focus:outline-none"
                                                 >
                                                     Add to cart
-                                                </a>
+                                                </Link>
                                             </div>
                                             {item.popular ?
                                                 <div className='absolute bg-primary text-white top-0 right-0 py-2 px-3'>
@@ -295,7 +295,7 @@ const Page = (props) => {
                                                 </div>
                                                 : null}
                                         </Card>
-                                    </Link>
+                                    </div>
                                 ))}
                             </div>
                             : <ProductsLoading />

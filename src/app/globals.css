@@ -93,3 +93,7 @@ body {
 .carouselM img{
   transform: translate(0);
 }
+
+.w-full.flex-shrink-0.transform.cursor-grab.snap-center{
+  position: relative;
+}
