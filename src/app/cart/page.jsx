@@ -14,9 +14,7 @@ const Page = () => {
     useEffect(() => {
         let total = 0;
         itemsC.forEach((item) => {
-            console.log(item.item.price)
             total += Number(item.item.price);
-            console.log(total)
         });
         setTotalPrice(total);
         let totalMoney = total-50+20
